@@ -1,0 +1,16 @@
+
+{% extends "todoapp/base.html" %}
+{% block cc %}
+
+<h1> Create your todo </h1>
+<h2>{{error}}</h2>
+<form method = 'POST'>
+
+{% csrf_token %}
+{{form.as_p}}
+
+<input type = 'submit' value = 'Create'>
+
+</form>
+
+{% endblock %}

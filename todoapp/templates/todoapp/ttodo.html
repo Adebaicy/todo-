@@ -1,0 +1,29 @@
+{% extends "todoapp/base.html" %}
+{% block cc %}
+
+{{ todo.title }}
+<form method = 'POST'>
+{% csrf_token %}
+{{ form.as_p }}
+
+
+<input type = 'submit' value = 'save'>
+</form>
+
+<form method = 'POST' action ='{% url "complete" todo.id %}'>
+{% csrf_token %}
+
+
+
+<input type = 'submit' value = 'complete'>
+</form>
+
+<form method = 'POST' action ='{% url "deletet" todo.id %}'>
+{% csrf_token %}
+
+
+
+<input type = 'submit' value = 'delete'>
+</form>
+
+{% endblock %}
